@@ -10,6 +10,11 @@
 #include <string>
 #include "List.h"
 
+/**
+* @fn		main(void)
+* @brief	エントリーポイント
+* @return	成功時 : 0 | 失敗時 : -1
+*/
 int main(void)
 {
 	//*** 変数宣言
