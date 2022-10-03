@@ -99,7 +99,7 @@ void List::DebugPrintAllNode(void)
 	while (CurrentNode)
 	{
 		// •\Ž¦
-		std::cout << CurrentNode->m_nUserScore << " ";
+		std::cout << CurrentNode->m_nUserScore << "\t";
 		std::cout << CurrentNode->m_szUserName << std::endl;
 
 		// ŽŸ‚Ö
