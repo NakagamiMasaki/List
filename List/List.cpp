@@ -57,7 +57,7 @@ void List::AddNode(int Score, const std::string& Name)
 		// 末尾のさらに後ろに追加
 		m_pEndNode->m_pNext = NewNode;
 
-		// 番兵更新
+		// 末端ノード更新
 		m_pEndNode = NewNode;
 	}
 }
