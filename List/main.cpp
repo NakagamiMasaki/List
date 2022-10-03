@@ -8,26 +8,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-//#include <crtdbg.h>
 #include "List.h"
 
 int main(void)
 {
-	//*** メモリリークチェック有効化
-	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-
 	//*** 変数宣言
 	List list;		// 双方向リスト
-
-#if 0
-	// テストコード
-	list.AddNode(0, "test0");
-	list.AddNode(1, "test1");
-	list.AddNode(2, "test2");
-	list.AddNode(3, "test3");
-	list.AddNode(4, "test4");
-	list.AddNode(5, "test5");
-#endif
 
 	//*** ファイル読み込み
 	std::ifstream File;
