@@ -34,7 +34,9 @@ int main(void)
 	File.open("Scores.txt");
 	if (!File.is_open())
 	{
+		// エラーメッセージ表示 & 待機
 		std::cout << "Scores.txtの読み込みに失敗しました。お手数ですが、exeファイルと同階層にファイルがあるかお確かめください。" << std::endl;
+		std::cout << "終了するにはエンターキーを押してください。" << std::endl;
 
 		rewind(stdin);
 		getchar();
@@ -50,18 +52,21 @@ int main(void)
 		std::string szName;		// 名前
 
 		// タブでスコアとユーザー名を区切る
-		auto TabPos = szLoadedText.find('\t');		// タブがある位置
-		szScore.assign(szLoadedText, 0, TabPos);		// タブの前までコピー
-		szName.assign(szLoadedText, TabPos + 1, std::string::npos);	// タブの後ろから最後までコピー
+		auto nTabPos = szLoadedText.find('\t');		// タブがある位置
+		szScore.assign(szLoadedText, 0, nTabPos);		// タブの前までコピー
+		szName.assign(szLoadedText, nTabPos + 1, std::string::npos);	// タブの後ろから最後までコピー
 
 		// リストに追加
-		int nScore = std::stoi(szScore);
+		auto nScore = std::stoi(szScore);
 		list.AddNode(nScore, szName);
 	}
 
 	// 中身を全て表示
 	list.DebugPrintAllNode();
 
+	// メッセージ表示 & 待機
+	std::cout << std::endl;
+	std::cout << "終了するにはエンターキーを押してください。" << std::endl;
 	rewind(stdin);
 	getchar();
 
